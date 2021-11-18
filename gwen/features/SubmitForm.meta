@@ -1,0 +1,50 @@
+Feature: Form submission meta
+
+  @Context
+  @StepDef
+  Scenario: the user is on the home page
+    When I navigate to "${app.url}"
+    Then the page title should be "Broccoli & Co."
+
+  @Action
+  @StepDef
+  Scenario: they request an invite
+    Given the invite button can be located by xpath "//button[text()='Request an invite']"
+      And the submit button can be located by xpath "//button[@type='submit']"
+     When I click the invite button
+     Then the submit button should be displayed
+
+  @Action
+  @StepDef
+  Scenario: I submit the form with email "<email>"
+    Given the name field can be located by xpath "//label[text()='Full Name']/input"
+      And the email field can be located by xpath "//label[text()='Email']/input"
+      And the confirm email field can be located by xpath "//label[text()='Confirm Email']/input"
+     When I type "${app.username}" in the name field
+      And I type "$<email>" in the email field
+      And I type "$<email>" in the confirm email field
+      And I click the submit button
+     Then the submit button should be disabled
+      And the submit button should contain "Sending invite"
+
+  @Action
+  @StepDef
+  Scenario: fill out the form with their details
+    When I submit the form with email "${app.email}"
+
+  @Action
+  @StepDef
+  Scenario: fill out the form with a previously used email
+    When I submit the form with email "${app.usedEmail}"
+
+  @Assertion
+  @StepDef
+  Scenario: they should receive confirmation of their invitation
+    Given the OK button can be located by xpath "//button[text()='OK']"
+     Then the OK button should be displayed
+
+  @Assertion
+  @StepDef
+  Scenario: they should receive an error message
+    Given the error message can be located by xpath "//p[contains(text(),'Email is already in use')]"
+     Then the error message should be displayed

@@ -1,0 +1,7 @@
+.direnv
+.env.local
+.env.*.local
+.envrc
+.eslintcache
+dist
+node_modules

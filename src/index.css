@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply font-mono font-bold text-5xl;
+    font-feature-settings: "ss01", "ss02";
+  }
+  h2 {
+    @apply font-mono text-2xl;
+    font-feature-settings: "ss01", "ss02";
+  }
+}
