@@ -1,5 +1,7 @@
+import { MouseEvent } from "react";
+
 type Props = {
-  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   submit?: boolean;
   children: string;
