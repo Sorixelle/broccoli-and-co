@@ -1,7 +1,7 @@
 with import <nixpkgs> {};
 
 mkShell {
-  name = "budgetapp";
+  name = "brocolli-and-co";
 
   nativeBuildInputs = [
     adoptopenjdk-hotspot-bin-8
