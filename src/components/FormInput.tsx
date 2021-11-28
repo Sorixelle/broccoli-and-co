@@ -3,16 +3,16 @@ import { useField } from "formik";
 type Props = {
   autocomplete?: string;
   name: string;
-  children: string;
+  label: string;
 };
 
-function FormInput({ name, children, autocomplete }: Props) {
+function FormInput({ name, label, autocomplete }: Props) {
   const [field, meta] = useField(name);
 
   return (
     <div>
       <label htmlFor={name}>
-        {children}
+        {label}
         <input
           id={name}
           autoComplete={autocomplete}

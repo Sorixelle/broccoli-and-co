@@ -56,15 +56,13 @@ function SignupForm({ onSuccess }: Props) {
     >
       {({ isSubmitting, isValid, status }) => (
         <Form className="flex flex-col gap-4 w-full">
-          <FormInput name="name" autocomplete="name">
-            Full Name
-          </FormInput>
-          <FormInput name="email" autocomplete="email">
-            Email
-          </FormInput>
-          <FormInput name="emailConfirm" autocomplete="email">
-            Confirm Email
-          </FormInput>
+          <FormInput name="name" autocomplete="name" label="Full Name" />
+          <FormInput name="email" autocomplete="email" label="Email" />
+          <FormInput
+            name="emailConfirm"
+            autocomplete="email"
+            label="Confirm Email"
+          />
           <Button disabled={isSubmitting || !isValid} submit>
             {isSubmitting ? "Sending invite..." : "Send"}
           </Button>
