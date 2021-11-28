@@ -7,7 +7,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "format": "prettier --ignore-unknown -w ./*",
-    "lint": "eslint ./src/* --ext .ts,.tsx",
+    "lint": "eslint \"./src/**/*.{ts,tsx}\"",
     "test": "jest",
     "integration:firefox": "gwen -Dgwen.target.browser=firefox -b gwen/features",
     "integration:chrome": "gwen -Dgwen.target.browser=chrome -b gwen/features",
