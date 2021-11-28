@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "./Modal";
 import Button from "./Button";
 import SignupForm from "./SignupForm";
+import InviteSuccess from "./InviteSuccess";
 
 function MainContent() {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -37,13 +38,7 @@ function MainContent() {
         onCloseFinish={handleModalCloseFinish}
       >
         {success ? (
-          <>
-            <p className="text-center pb-4">
-              You will be one of the first to experience Broccoli & Co when we
-              launch.
-            </p>
-            <Button onClick={handleModalClose}>OK</Button>
-          </>
+          <InviteSuccess onConfirm={handleModalClose} />
         ) : (
           <SignupForm onSuccess={handleFormSuccess} />
         )}
