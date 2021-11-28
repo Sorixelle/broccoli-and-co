@@ -9,8 +9,8 @@
     "format": "prettier --ignore-unknown -w ./*",
     "lint": "eslint ./src/* --ext .ts,.tsx",
     "test": "jest",
-    "gwen:firefox": "gwen -Dgwen.target.browser=firefox -b gwen/features",
-    "gwen:chrome": "gwen -Dgwen.target.browser=chrome -b gwen/features",
+    "integration:firefox": "gwen -Dgwen.target.browser=firefox -b gwen/features",
+    "integration:chrome": "gwen -Dgwen.target.browser=chrome -b gwen/features",
     "prepare": "husky install"
   },
   "devDependencies": {
