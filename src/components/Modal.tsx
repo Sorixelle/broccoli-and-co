@@ -40,7 +40,7 @@ function Modal({ title, open, onClose, onCloseFinish, children }: Props) {
             leaveFrom="translate-y-0 opacity-100"
             leaveTo="-translate-y-full opacity-0"
           >
-            <div className="transform-gpu flex flex-col items-center relative bg-white w-screen sm:max-w-md m-auto p-8">
+            <div className="transform-gpu flex flex-col items-center relative bg-white max-w-md m-auto p-8">
               <button
                 type="button"
                 className="absolute top-4 right-4 h-6 w-6 text-gray-300"
