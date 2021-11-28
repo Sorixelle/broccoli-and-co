@@ -3,5 +3,6 @@
 .env.*.local
 .envrc
 .eslintcache
+.pnpm-debug.log
 dist
 node_modules
